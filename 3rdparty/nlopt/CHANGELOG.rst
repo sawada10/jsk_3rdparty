@@ -2,6 +2,12 @@
 Changelog for package nlopt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.31 (2025-05-13)
+-------------------
+
+2.1.30 (2025-05-10)
+-------------------
+
 2.1.29 (2025-01-05)
 -------------------
 * nlopt: use nlopt-2.3.tar.gz in 3rdparty/nlopt/build, instead of downloading from mit.edu (`#514 <https://github.com/jsk-ros-pkg/jsk_3rdparty/issues/514>`_)

@@ -2,6 +2,12 @@
 Changelog for package ros_speech_recognition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.31 (2025-05-13)
+-------------------
+
+2.1.30 (2025-05-10)
+-------------------
+
 2.1.29 (2025-01-05)
 -------------------
 * [doc] fix typo in jsk_3rdparty/ros_speech_recognition/README.md (`#499 <https://github.com/jsk-ros-pkg/jsk_3rdparty/issues/499>`_)

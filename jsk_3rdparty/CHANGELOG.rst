@@ -2,6 +2,14 @@
 Changelog for package jsk_3rdparty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.31 (2025-05-13)
+-------------------
+* jsk_3rdparty/package.xml: add emotion_analyzer, gdrive_Ros, voccevox, remove slic
+* Contributors: Kei Okada
+
+2.1.30 (2025-05-10)
+-------------------
+
 2.1.29 (2025-01-05)
 -------------------
 

@@ -2,6 +2,12 @@
 Changelog for package nfc_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.31 (2025-05-13)
+-------------------
+
+2.1.30 (2025-05-10)
+-------------------
+
 2.1.29 (2025-01-05)
 -------------------
 * [nfc_ros] nfcpy requries python3.6+, skip kinetic which has python3.5 `#515 <https://github.com/jsk-ros-pkg/jsk_3rdparty/issues/515>`_)
