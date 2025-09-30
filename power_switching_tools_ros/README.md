@@ -126,6 +126,7 @@ uhubctl -a off -l <hub_location> -p <hub_port>
 uhubctl -a on -l <hub_location> -p <hub_port>
 ```
 If USB power supply to the device is stopped and restarted as expected, `power_switching_tools_ros` can also power on/off the device.
+
 If not, try the latest version of `uhubctl`:
 ```bash
 cd ~
@@ -136,8 +137,8 @@ make
 ./uhubctl -a on -l <hub_location> -p <hub_port>
 ```
 If this works as expected, use `~/uhubctl/uhubctl` to control your hub in the following (i.e., pass `uhubctl_executable:=~/uhubctl/uhubctl` to `usb_ppps_hub.launch`).
-If not, check [the web page of uhubctl](https://github.com/mvp/uhubctl) (especially [FAQ](https://github.com/mvp/uhubctl?tab=readme-ov-file#faq)) to find candidates for a workaround and try them.
-If the found workaround requires supplementary options for `uhubctl`, write them down.
+=======
+
 
 ### Minimal usage: launching driver only
 
