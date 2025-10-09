@@ -11,14 +11,14 @@
 
 struct EyeAsset {
  std::string name = "default";
- std::string path_outline = "/outline.jpg";    // static
- std::string path_iris = "/iris.jpg";          // set_gaze_direction(x,y) to set position
- std::string path_pupil = "/pupil.jpg";        //  move along with iris
- std::string path_reflex = "/reflex.jpg" ;     //  move along with puppil + random motion
- std::string path_upperlid = "/upperlid.jpg";  // use upperlid_position_map to set y-axis motoin
+ std::string path_outline = "/white.jpg";     // static
+ std::string path_iris = "/kashiwagi_iris.png";          // set_gaze_direction(x,y) to set position
+ std::string path_pupil = "/kashiwagi_pupil.png";        //  move along with iris
+ std::string path_reflex = "/kashiwagi_reflex.png" ;     //  move along with puppil + random motion
+ std::string path_upperlid = "/kashiwagi_upperlid.jpg";  // use upperlid_position_map to set y-axis motoin
  std::vector<int> upperlid_position = {0};   // upperlid = motion layer
- int direction = 0;
- bool invert_rl = false;
+ int direction = 4;
+ bool invert_rl = true;
  int upperlid_pivot_x = 75;
  int upperlid_pivot_y = 139;
  int upperlid_default_pos_x = 75;
