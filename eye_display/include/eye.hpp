@@ -22,11 +22,11 @@ extern void logfatal(const char *fmt, ...);
 constexpr int EXTRA_EYE_ASSET_SIZE=3;
 struct EyeAsset {
  std::string name = "default";
- std::string path_outline = "/outline.jpg";    // static
- std::string path_iris = "/iris.jpg";          // set_gaze_direction(x,y) to set position
- std::string path_pupil = "/pupil.jpg";        //  move along with iris
- std::string path_reflex = "/reflex.jpg" ;     //  move along with puppil + random motion
- std::string path_upperlid = "/upperlid.jpg";  // use upperlid_position_map to set y-axis motoin
+ std::string path_outline = "/white.jpg";     // static
+ std::string path_iris = "/kashiwagi_iris.png";          // set_gaze_direction(x,y) to set position
+ std::string path_pupil = "/kashiwagi_pupil.png";        //  move along with iris
+ std::string path_reflex = "/kashiwagi_reflex.png" ;     //  move along with puppil + random motion
+ std::string path_upperlid = "/kashiwagi_upperlid.jpg";  // use upperlid_position_map to set y-axis motoin
  std::vector<float> iris_zoom = {};         // eyeball (iris, pupil, reflex)
  std::vector<int> upperlid_position_x = {0};   // upperlid = motion layer
  std::vector<int> upperlid_position_y = {9};   // upperlid = motion layer
@@ -37,8 +37,8 @@ struct EyeAsset {
  std::vector<std::vector<int>> extra_position_y = {};
  std::vector<std::vector<int>> extra_rotation_theta = {};
  std::vector<std::vector<float>> extra_zoom = {};
- int direction = 0;
- bool invert_rl = false;
+ int direction = 4; // kashiwagi eye direction = 4
+ bool invert_rl = true; // true for left eye and false for right eye
  float iris_default_pos_x = 0.0f;
  float iris_default_pos_y = 0.2f;
  float iris_default_theta = 0.0f;
