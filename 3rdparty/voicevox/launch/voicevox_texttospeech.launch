@@ -12,6 +12,11 @@
        doc="Number of cpu threads" />
   <arg name="use_docker" default="false"
        doc="Use docker or not (default: false)" />
+  <arg name="docker_only" default="false"
+       doc="Launch only docker container without sound_play node (default: false)" />
+  <arg name="remote_only" default="false"
+       doc="Connect to remote server without starting local server (default: false)" />
+
   <node name="voicevox_server"
         pkg="voicevox" type="run-voicevox"
         args="--voicelib_dir=$(find voicevox)/voicevox_core --host 0.0.0.0 --port $(arg port) --cpu_num_threads=$(arg cpu_num_threads) --load_all_models --"

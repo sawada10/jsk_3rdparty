@@ -150,7 +150,6 @@ The `use_docker` and `docker_only` options allow you to:
 - Run VOICEVOX engine in an isolated container environment
 - Easily deploy on different machines without local installation
 
->>>>>>> iory/voicevox-docker
 
 ## Usage
 
