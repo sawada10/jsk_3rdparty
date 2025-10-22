@@ -16,6 +16,7 @@ class RespeakerNode(object):
         self.speech_continuation = rospy.get_param("~speech_continuation", 0.5)
         self.speech_max_duration = rospy.get_param("~speech_max_duration", 7.0)
         self.speech_min_duration = rospy.get_param("~speech_min_duration", 0.1)
+        self.sample_duration = rospy.get_param("~sample_duration", None)  # sec
         suppress_pyaudio_error = rospy.get_param("~suppress_pyaudio_error", True)
         #
         self.respeaker = RespeakerInterface()
@@ -35,7 +36,8 @@ class RespeakerNode(object):
         self.config = None
         self.dyn_srv = Server(RespeakerConfig, self.on_config)
         # start
-        self.respeaker_audio = RespeakerAudio(self.on_audio, suppress_error=suppress_pyaudio_error)
+        self.respeaker_audio = RespeakerAudio(self.on_audio, suppress_error=suppress_pyaudio_error,
+                                              sample_duration=self.sample_duration)
         self.speech_prefetch_bytes = int(
             self.speech_prefetch * self.respeaker_audio.rate * self.respeaker_audio.bitdepth / 8.0)
         self.speech_prefetch_buffer = b""
@@ -46,7 +48,7 @@ class RespeakerNode(object):
         self.sub_led = rospy.Subscriber("status_led", ColorRGBA, self.on_status_led)
 
         info_msg = AudioInfo(
-            channels=self.respeaker_audio.channel,
+            channels=self.respeaker_audio.channels,
             sample_rate=self.respeaker_audio.rate,
             sample_format='S16LE',
             bitrate=self.respeaker_audio.rate * self.respeaker_audio.bitdepth,
