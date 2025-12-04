@@ -13,6 +13,7 @@ from actionlib_msgs.msg import GoalStatus, GoalStatusArray
 from audio_common_msgs.msg import AudioData
 from sound_play.msg import SoundRequest, SoundRequestAction, SoundRequestGoal
 from speech_recognition_msgs.msg import SpeechRecognitionCandidates
+from ros_speech_recognition.recognize_google_cloud import RecognizerEx
 
 
 class SpeechToText(object):
@@ -30,7 +31,14 @@ class SpeechToText(object):
         tts_action_names = rospy.get_param(
             '~tts_action_names', ['sound_play'])
 
-        self.recognizer = SR.Recognizer()
+        # self.recognizer = SR.Recognizer()
+        self.recognizer = RecognizerEx()
+
+        credentials_path = rospy.get_param("~google_cloud_credentials_json", None)
+        self.credentials_json = None
+        if credentials_path is not None:
+            with open(credentials_path) as j:
+                self.credentials_json = j.read()
 
         self.tts_action = None
         self.last_tts = None
@@ -81,8 +89,9 @@ class SpeechToText(object):
         data = SR.AudioData(msg.data, self.sample_rate, self.sample_width)
         try:
             rospy.loginfo("Waiting for result %d" % len(data.get_raw_data()))
-            result = self.recognizer.recognize_google(
-                data, language=self.language)
+            result = self.recognizer.recognize_google_cloud(
+                data, language=self.language,
+                credentials_json=self.credentials_json)
             msg = SpeechRecognitionCandidates(
                 transcript=[result],
                 confidence=[1.0],
