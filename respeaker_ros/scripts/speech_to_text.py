@@ -88,10 +88,12 @@ class SpeechToText(object):
             return
         data = SR.AudioData(msg.data, self.sample_rate, self.sample_width)
         try:
-            rospy.loginfo("Waiting for result %d" % len(data.get_raw_data()))
-            result = self.recognizer.recognize_google_cloud(
-                data, language=self.language,
-                credentials_json=self.credentials_json)
+            rospy.loginfo("Waiting for result length %d" % len(data.get_raw_data()))
+            result = self.recognizer.recognize_google(
+                data, language=self.language)
+            # result = self.recognizer.recognize_google_cloud(
+            #     data, language=self.language,
+            #     credentials_json=self.credentials_json)
             msg = SpeechRecognitionCandidates(
                 transcript=[result],
                 confidence=[1.0],
