@@ -2,6 +2,6 @@
 
 # exec rosrun voicevox request_synthesis.sh $@
 # /home/ubuntu/ros/kashiwagi_ws/src/jsk_3rdparty/3rdparty/voicevox/bin/request_synthesis.sh $@
-/home/ubuntu/ros/kashiwagi_ws/src/jsk_3rdparty/3rdparty/voicevox/node_scripts/request_synthesis.sh $@
+/home/kashiwagi/ros/kashiwagi_ws/src/jsk_3rdparty/3rdparty/voicevox/node_scripts/request_synthesis.sh $@
 
 
